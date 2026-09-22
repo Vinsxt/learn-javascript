@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Functions</title>
+</head>
+
+<body>
+
+
+  <script>
+    function function1(){
+      console.log('function1');
+      console.log('hello world');
+    }
+
+    function1();
+
+    function calculateTax(price, taxRate){
+      const tax = price * taxRate;
+      return tax;
+    }
+
+    const taxAmount = calculateTax(100, 0.1);
+    console.log(`Tax amount: ${taxAmount}`);
+
+
+  </script>
+</body>
+
+</html>
