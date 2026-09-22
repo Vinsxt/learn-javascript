@@ -17,14 +17,30 @@
     };
 
     console.log(product);
-    console.log(product.name);
-    console.log(product.price);
+    // console.log(product.name);
+    // console.log(product.price);
 
     product.name = 'Cotton Socks';
-    console.log(product);
+    // console.log(product);
 
     delete product.category;
-    console.log(product);
+
+    const product2 = {
+      name: 'Shoes',
+      rating: {
+        count: 87,
+        stars: 4.5
+      },
+
+      fun: function sayHello() {
+        console.log('This is a function inside an object');
+      }
+    };
+
+    product2.fun();
+
+    console.log(product2);
+
   </script>
 </body>
 
