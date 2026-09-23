@@ -70,6 +70,24 @@
     console.log(testObjectReference3 === testObjectReference);
     console.log(testObjectReference2 === testObjectReference);
 
+    const object4 = {
+      name: 'Object 4 to 5',
+      price: 799
+    }
+
+    const { name, price } = object4;
+    console.log(name);
+    console.log(price);
+
+    const object5 = {
+      name: name,
+      method() {
+        console.log('This is a method with shortcut syntax inside an object');
+      }
+    }
+
+    console.log(object5);
+    object5.method();
 
   </script>
 </body>
