@@ -7,11 +7,21 @@
 </head>
 
 <body>
-
+  <button>hello</button>
+  <button class="button-with-class">second button</button>
 
   <script>
 
-    
+    document.title = "Document Object Model";
+
+    console.log(document.body);
+
+    // document.body.innerHTML = '<button>Button from DOM</button>';
+
+    console.log(document.querySelector('button').innerHTML);
+    document.querySelector('button').innerHTML = 'Changed with QuerySelector';
+
+    console.log(document.querySelector('.button-with-class'));
 
   </script>
 </body>
