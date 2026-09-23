@@ -10,6 +10,9 @@
 
 
   <script>
+
+    console.log(localStorage.getItem('simpleMessage'));
+    
     const product = {
       name: 'Socks',
       price: 1090,
@@ -40,6 +43,13 @@
     product2.fun();
 
     console.log(product2);
+
+    let JsonString = JSON.stringify(product2);
+
+    let JSObject = JSON.parse(JsonString);
+
+    localStorage.setItem('simpleMessage', 'Hello World, this is from localStorage');
+
 
   </script>
 </body>
