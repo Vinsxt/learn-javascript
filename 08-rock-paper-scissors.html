@@ -24,24 +24,29 @@
 
   <script>
 
-    const score = JSON.parse(localStorage.getItem('score'));
+    let score = JSON.parse(localStorage.getItem('score')) || {
+      wins: 0,
+      losses: 0,
+      ties: 0
+    };
 
     function resetScore() {
       score.wins = 0;
       score.losses = 0;
       score.ties = 0;
+      localStorage.removeItem('score');
     }
 
     function playGame(playerMove) {
       const randomNumber = Math.floor(Math.random() * 3) + 1;
       let computerMove = '';
-      
+
       if (randomNumber === 1) {
         computerMove = 'Rock';
-      } 
+      }
       else if (randomNumber === 2) {
         computerMove = 'Paper';
-      } 
+      }
       else {
         computerMove = 'Scissors';
       }
@@ -53,7 +58,7 @@
       if (playerMove === computerMove) {
         result = 'Tie.';
         score.ties++;
-      } 
+      }
       else if (
         (playerMove === 'Rock' && computerMove === 'Scissors') ||
         (playerMove === 'Paper' && computerMove === 'Rock') ||
@@ -61,7 +66,7 @@
       ) {
         result = 'You win.';
         score.wins++;
-      } 
+      }
       else {
         result = 'You lose.';
         score.losses++;

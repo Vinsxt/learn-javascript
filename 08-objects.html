@@ -12,7 +12,7 @@
   <script>
 
     console.log(localStorage.getItem('simpleMessage'));
-    
+
     const product = {
       name: 'Socks',
       price: 1090,
@@ -49,6 +49,26 @@
     let JSObject = JSON.parse(JsonString);
 
     localStorage.setItem('simpleMessage', 'Hello World, this is from localStorage');
+
+    console.log("hello".length);
+    console.log("hello to upperCase".toUpperCase());
+
+    const testObjectReference = {
+      name: 'Test Object Reference'
+    };
+
+    const testObjectReference2 = testObjectReference;
+
+    testObjectReference2.name = 'Changed Name';
+
+    console.log(testObjectReference.name);
+
+    const testObjectReference3 = {
+      name: 'Test Object Reference 3'
+    };
+
+    console.log(testObjectReference3 === testObjectReference);
+    console.log(testObjectReference2 === testObjectReference);
 
 
   </script>
