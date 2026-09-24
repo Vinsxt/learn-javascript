@@ -6,6 +6,26 @@
   <title>DOM Projects</title>
 
   <style>
+
+    body {
+      font-family: Arial;
+    }
+
+    .css-order-cost {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .css-calculate-button {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
     .css-subscribe-button {
       background-color: red;
       color: white;
@@ -18,13 +38,13 @@
       cursor: pointer;
       font-weight: bold;
       border-radius: 50px;
+      margin-bottom: 30px;
     }
     .css-is-subscribed {
       background-color: lightgray;
       color: black;
     }
 
-    
   </style>
 </head>
 
@@ -36,8 +56,8 @@
   <p>Amazon Shipping Calculator</p>
   <p>Orders under $40 = +$10 shipping.</p>
   <p>Orders over $40 = FREE shipping.</p>
-  <input placeholder="Cost of order" class="order-cost" onkeydown="handleCostKeydown(event)">
-  <button onclick="calculateShipping()">Calculate</button>
+  <input placeholder="Cost of order" class="order-cost css-order-cost" onkeydown="handleCostKeydown(event)">
+  <button class="css-calculate-button" onclick="calculateShipping()">Calculate</button>
   <p class="shipping-result"></p>
 
   <script>
