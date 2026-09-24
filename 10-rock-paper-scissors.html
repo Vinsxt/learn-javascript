@@ -5,50 +5,7 @@
 <head>
   <title>Rock Paper Scissors</title>
 
-  <style>
-    body {
-      background-color: rgb(25, 25, 25);
-      color: white;
-      font-family: Arial;
-    }
-    .title {
-      font-size: 30px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .move-icon {
-      width: 50px;
-      height: 50px;
-      
-    }
-    .move-button {
-      background-color: transparent;
-      border: 3px solid white;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    .css-result-text {
-      font-size: 25px;
-      font-weight: bold;
-      margin-top: 50px;
-    }
-
-    .css-moves-text {
-      font-size: 20px;
-      margin-bottom: 50px;
-    }
-
-    .css-reset-score-button {
-      border: none;
-      padding: 8px 15px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/10-rock-paper-scissors.css">
 </head>
 
 <body>
@@ -77,70 +34,7 @@
 
   <button class="css-reset-score-button" onclick="resetScore()">Reset score</button>
 
-  <script>
-
-    let score = JSON.parse(localStorage.getItem('score')) || {
-      wins: 0,
-      losses: 0,
-      ties: 0
-    };
-
-    function resetScore() {
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
-      document.querySelector('.score-text').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
-    }
-
-    function displayResultDOM(result, playerMove, computerMove) {
-      document.querySelector('.result-text').innerHTML = result;
-      document.querySelector('.moves-text').innerHTML = `You <img src="images/${playerMove}-emoji.png" class="move-icon">  <img src="images/${computerMove}-emoji.png" class="move-icon"> Computer`;
-      document.querySelector('.score-text').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
-    }
-
-    function playGame(playerMove) {
-      const randomNumber = Math.floor(Math.random() * 3) + 1;
-      let computerMove = '';
-
-      if (randomNumber === 1) {
-        computerMove = 'rock';
-      }
-      else if (randomNumber === 2) {
-        computerMove = 'paper';
-      }
-      else {
-        computerMove = 'scissors';
-      }
-
-      console.log(`Computer move: ${computerMove}`);
-
-      let result = '';
-
-      if (playerMove === computerMove) {
-        result = 'Tie.';
-        score.ties++;
-        displayResultDOM(result, playerMove, computerMove);
-      }
-      else if (
-        (playerMove === 'rock' && computerMove === 'scissors') ||
-        (playerMove === 'paper' && computerMove === 'rock') ||
-        (playerMove === 'scissors' && computerMove === 'paper')
-      ) {
-        result = 'You win.';
-        score.wins++;
-        displayResultDOM(result, playerMove, computerMove);
-      }
-      else {
-        result = 'You lose.';
-        score.losses++;
-        displayResultDOM(result, playerMove, computerMove);
-      }
-
-      localStorage.setItem('score', JSON.stringify(score));
-    }
-
-  </script>
+  <script src="scripts/10-rock-paper-scissors.js"></script>
 </body>
 
 </html>
