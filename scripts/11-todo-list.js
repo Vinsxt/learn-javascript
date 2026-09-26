@@ -22,7 +22,7 @@ function renderToDoList() {
         const html = `
         <div>${name}</div> 
         <div>${dueDate}</div>
-        <button onclick="deleteToDo(${i})">Delete</button>
+        <button class="css-button-delete" onclick="deleteToDo(${i})">Delete</button>
         `;
         htmlList += html;
         console.log(htmlList);
