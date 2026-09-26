@@ -19,7 +19,11 @@ function renderToDoList() {
         const taskObject = toDoList[i];
         const name = taskObject.name;
         const dueDate = taskObject.dueDate;
-        const html = `<p>${name} ${dueDate} <button onclick="deleteToDo(${i})">Delete</button> </p>`;
+        const html = `
+        <div>${name}</div> 
+        <div>${dueDate}</div>
+        <button onclick="deleteToDo(${i})">Delete</button>
+        `;
         htmlList += html;
         console.log(htmlList);
     }
@@ -40,7 +44,7 @@ function addToDo() {
         name: task,
         dueDate: taskDate
     });
-    
+
     console.log(toDoList);
     renderToDoList();
 }

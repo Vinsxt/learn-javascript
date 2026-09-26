@@ -1,0 +1,9 @@
+body {
+  font-family: Arial;
+}
+
+.css-list-div,
+.css-top-row-div {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+}
