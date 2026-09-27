@@ -21,7 +21,7 @@ function autoPlay() {
     document.querySelector(".css-auto-play-button").innerHTML = "Stop Play";
 
     const playerMove = pickComputerMove();
-    intervalId =setInterval(function () {
+    intervalId = setInterval(function () {
       playGame(playerMove);
     }, 1000);
     isAutoPlaying = true;
@@ -30,7 +30,6 @@ function autoPlay() {
     document.querySelector(".css-auto-play-button").innerHTML = "Auto Play";
     clearInterval(intervalId);
     isAutoPlaying = false;
-    return;
   }
 }
 
