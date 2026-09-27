@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Advanced Functions</title>
+
+    <style></style>
+  </head>
+
+  <body>
+    <script>
+      greeting();
+      function greeting() {
+        console.log('hello');
+      }
+
+      const function1 = function() {
+        console.log('hello2');
+      };
+
+      console.log(function1);
+
+      function1();
+
+      function run(param) {
+        param();
+      }
+
+      run(function() {
+        console.log('hello3');
+      });
+
+      function testTimeOut() {
+        console.log('timeout');
+      }
+
+      setTimeout(testTimeOut, 3000);
+
+    </script>
+  </body>
+</html>
