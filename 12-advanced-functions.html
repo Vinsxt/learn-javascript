@@ -36,6 +36,20 @@
 
       setTimeout(testTimeOut, 3000);
 
+      let xForInterval = 5;
+      function testInterval() {
+        
+        if (xForInterval === 0) {
+          return;
+        }
+        else{
+            console.log(`interval ${xForInterval}`);
+            xForInterval--;
+        }
+      }
+
+      setInterval(testInterval, 3000);
+
     </script>
   </body>
 </html>
