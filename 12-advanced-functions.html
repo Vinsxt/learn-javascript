@@ -14,10 +14,12 @@
 
       // event listener
       const buttonElement = document.querySelector('.js-button');
-
-      buttonElement.addEventListener('click', () => {
+      const eventListener = () => {
         console.log('button clicked');
-      });
+      }
+
+      buttonElement.addEventListener('click', eventListener);
+      buttonElement.removeEventListener('click', eventListener);
 
       buttonElement.addEventListener('click', () => {
         console.log('button clicked 2');

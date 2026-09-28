@@ -8,6 +8,11 @@ const toDoList = [
     }
 ];
 
+const addButtonElement = document.querySelector('.js-add-button');
+addButtonElement.addEventListener('click', () => {
+    addToDo();
+});
+
 function deleteToDo(index) {
     toDoList.splice(index, 1);
     renderToDoList();
@@ -20,11 +25,19 @@ function renderToDoList() {
         const html = `
         <div>${name}</div> 
         <div>${dueDate}</div>
-        <button class="css-button-delete" onclick="deleteToDo(${index})">Delete</button>
+        <button class="css-button-delete js-delete-button">Delete</button>
         `;
         htmlList += html;
     });
     document.querySelector('.list-div').innerHTML = htmlList;
+
+    // Add event listeners to the delete buttons
+    const deleteButtons = document.querySelectorAll('.js-delete-button');
+    deleteButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            deleteToDo(index);
+        });
+    });
 }
 
 function addToDo() {

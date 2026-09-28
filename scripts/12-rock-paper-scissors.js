@@ -1,3 +1,30 @@
+let rockButtonElement = document.querySelector(".js-rock-button");
+rockButtonElement.addEventListener("click", () => {
+  playGame("rock");
+});
+
+let paperButtonElement = document.querySelector(".js-paper-button");
+paperButtonElement.addEventListener("click", () => {
+  playGame("paper");
+});
+
+let scissorsButtonElement = document.querySelector(".js-scissors-button");
+scissorsButtonElement.addEventListener("click", () => {
+  playGame("scissors");
+});
+
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "r" || event.key === "R") {
+    playGame("rock");
+  }
+  else if (event.key === "p" || event.key === "P") {
+    playGame("paper");
+  }
+  else if (event.key === "s" || event.key === "S") {
+    playGame("scissors");
+  }
+});
+
 let score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
   losses: 0,
