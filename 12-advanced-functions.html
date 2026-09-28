@@ -8,7 +8,22 @@
   </head>
 
   <body>
+
+    <button class="js-button">Click</button>
     <script>
+
+      // event listener
+      const buttonElement = document.querySelector('.js-button');
+
+      buttonElement.addEventListener('click', () => {
+        console.log('button clicked');
+      });
+
+      buttonElement.addEventListener('click', () => {
+        console.log('button clicked 2');
+      });
+
+      // basic functions
       greeting();
       function greeting() {
         console.log('hello');
@@ -26,35 +41,41 @@
         param();
       }
 
+      // function inside function
       run(function() {
         console.log('hello3');
       });
 
+      // setTimeout function
       function testTimeOut() {
         console.log('timeout');
       }
 
       setTimeout(testTimeOut, 3000);
 
+      // intervals
       let xForInterval = 5;
+      let intervalId;
+
       function testInterval() {
         
+        console.log(`interval ${xForInterval}`);
+        xForInterval--;
         if (xForInterval === 0) {
-          return;
-        }
-        else{
-            console.log(`interval ${xForInterval}`);
-            xForInterval--;
+          clearInterval(intervalId);
         }
       }
 
-      setInterval(testInterval, 3000);
+      intervalId = setInterval(() => {
+        testInterval();
+      }, 2000);
 
       // how to loop through an array the preferred way:
       const arr = ['capybara', 'otter', 'turtle', 'cat', 'shrimp'].forEach(function(value, index) {
         console.log(`index: ${index}, value: ${value}`);
       })
 
+      // arrow functions
       const arrowFunction = (param, param2) => {
         console.log('this is an arrow function');
         return 5;
@@ -63,6 +84,16 @@
 
       const oneLineArrowFunction = param => console.log('this is a one line arrow function');
       oneLineArrowFunction();
+
+      // shorthand function inside objects
+      const functionShortcutObject = {
+        method: () => {
+          console.log('this is an arrow function in an object');
+        },
+        method2() {
+          console.log('this is a shorthand method in an object');
+        }
+      }
 
     </script>
   </body>
