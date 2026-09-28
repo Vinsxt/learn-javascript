@@ -55,7 +55,14 @@
         console.log(`index: ${index}, value: ${value}`);
       })
 
+      const arrowFunction = (param, param2) => {
+        console.log('this is an arrow function');
+        return 5;
+      }
+      arrowFunction();
 
+      const oneLineArrowFunction = param => console.log('this is a one line arrow function');
+      oneLineArrowFunction();
 
     </script>
   </body>

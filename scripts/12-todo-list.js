@@ -14,19 +14,16 @@ function deleteToDo(index) {
 }
 
 function renderToDoList() {
-    let htmlList = '';
-    for (let i = 0; i < toDoList.length; i++) {
-        const taskObject = toDoList[i];
-        const name = taskObject.name;
-        const dueDate = taskObject.dueDate;
+    let htmlList = ''; 
+    toDoList.forEach((taskObject, index) => {
+        const { name, dueDate } = taskObject;
         const html = `
         <div>${name}</div> 
         <div>${dueDate}</div>
-        <button class="css-button-delete" onclick="deleteToDo(${i})">Delete</button>
+        <button class="css-button-delete" onclick="deleteToDo(${index})">Delete</button>
         `;
         htmlList += html;
-        console.log(htmlList);
-    }
+    });
     document.querySelector('.list-div').innerHTML = htmlList;
 }
 
